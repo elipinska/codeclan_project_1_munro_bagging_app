@@ -1,0 +1,12 @@
+<h1>All awesome hikes:</h1>
+<% for hike in @hikes %>
+<div>
+  <p>Date: <%= hike.date %>
+  <p>Hiker: <%= hike.hiker().full_name %></p>
+  <p>Munro: <%= hike.munro().name %> </p>
+  <form action="/hikes/<%= hike.id %>/delete" method="post">
+    <input type='submit' value="Delete!">
+  </form>
+  <hr>
+</div>
+<% end %>

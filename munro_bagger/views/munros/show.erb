@@ -3,3 +3,6 @@
 <p>Name: <%= @munro.name %></p>
 <p>Region: <%= @munro.region %></p>
 <p>Altitide: <%= @munro.altitude %></p>
+<form action="/munros/<%= @munro.id %>/delete" method="post">
+  <input type='submit' value="Delete (this will delete the munro and all linked hikes!)">
+</form>

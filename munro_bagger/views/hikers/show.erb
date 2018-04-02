@@ -5,3 +5,6 @@
 <% if @hiker.munro_goal != nil %>
     <p>Wants to bag <%= @hiker.munro_goal %> munros.</p>
 <%end%>
+<form action="/hikers/<%= @hiker.id %>/delete" method="post">
+  <input type='submit' value="Delete (this will delete the user and all their hikes!)">
+</form>

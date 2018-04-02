@@ -11,3 +11,9 @@ get '/munros/:id' do
   @munro = Munro.find_by_id(params['id'].to_i)
   erb( :"munros/show" )
 end
+
+post '/munros/:id/delete' do
+  munro = Munro.find_by_id(params[:id])
+  munro.delete()
+  redirect to("/munros")
+end

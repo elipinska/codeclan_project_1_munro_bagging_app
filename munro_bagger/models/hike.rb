@@ -63,6 +63,24 @@ class Hike
     SqlRunner.run(sql, values)
    end
 
+   def hiker()
+     sql = "SELECT * FROM hikers
+    WHERE id = $1"
+     values = [@hiker_id]
+     result = SqlRunner.run(sql, values)
+     return Hiker.new(result[0])
+     # return hiker = result.map{|hiker| Hiker.new(hiker)}
+   end
+
+   def munro()
+     sql = "SELECT * FROM munros
+    WHERE id = $1"
+     values = [@munro_id]
+     result = SqlRunner.run(sql, values)
+     return Munro.new(result[0])
+     # return hiker = result.map{|hiker| Hiker.new(hiker)}
+   end
+
 
 
 end

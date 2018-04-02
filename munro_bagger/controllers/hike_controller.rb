@@ -23,6 +23,7 @@ post '/hikes' do
 end
 
 post '/hikes/:id/delete' do
-  Hike.delete(params[:id])
+  hike = Hike.find_by_id(params[:id])
+  hike.delete()
   redirect to("/hikes")
 end

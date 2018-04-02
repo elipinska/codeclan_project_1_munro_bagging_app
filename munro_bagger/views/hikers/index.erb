@@ -1,7 +1,7 @@
 <h1>All intrepid hikers:</h1>
 <% for hiker in @hikers %>
 <div>
-  <p>Name: <%= hiker.first_name + " " + hiker.last_name %></p>
+  <p>Name: <%= hiker.full_name() %></p>
   <p>Age: <%= hiker.age %></p>
   <% if hiker.munro_goal != nil %>
       <p>Wants to bag <%= hiker.munro_goal %> munros.</p>

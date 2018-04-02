@@ -1,0 +1,26 @@
+<h1>Record a new hike!</h1>
+
+<form action="/hikes" method="post">
+  <label>
+  Select a hiker:
+    <select name="hiker_id">
+      <% for hiker in @hikers %>
+      <option value="<%= hiker.id %>"><%= hiker.full_name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select a munro:
+    <select name="munro_id">
+      <% for munro in @munros %>
+      <option value="<%= munro.id %>"><%= munro.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label for="date">Date:</label>
+  <input id ="date" type="date" name="date"/>
+
+  <input type='submit' value="Submit!">
+</form>

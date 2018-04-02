@@ -19,7 +19,7 @@ CREATE TABLE munros
 
 CREATE TABLE hikes
   (id SERIAL4 PRIMARY KEY,
-  hiker_id INT4 REFERENCES hikers(id) NOT NULL,
-  munro_id INT4 REFERENCES munros(id) NOT NULL,
+  hiker_id INT4 REFERENCES hikers(id) ON DELETE CASCADE,
+  munro_id INT4 REFERENCES munros(id) ON DELETE CASCADE,
   date DATE NOT NULL
 );
