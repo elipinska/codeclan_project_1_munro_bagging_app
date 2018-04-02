@@ -3,7 +3,7 @@
 <p>A Munro is a mountain in Scotland with a height over 3,000 feet (914 m). This project aims to create an app allowing hikers to keep track of all munros they climbed and compare themselves to others.</p>
 
 
-<h2>### MVP:</h2>
+<h2>MVP:</h2>
 
 <ul>
   <li>Display a list of hikers</li>
