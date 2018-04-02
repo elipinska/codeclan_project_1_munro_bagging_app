@@ -65,6 +65,16 @@ class Hiker
     SqlRunner.run(sql, values)
    end
 
+   def all_munros()
+     sql = "SELECT munros.* FROM munros
+            INNER JOIN hikes
+            ON munros.id = hikes.munro_id
+            WHERE hikes.hiker_id = $1"
+     values = [@id]
+     results = SqlRunner.run(sql, values)
+     return results.map {|munro| Munro.new(munro)}
+   end
+
 
 
 end

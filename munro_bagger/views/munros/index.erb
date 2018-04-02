@@ -1,0 +1,11 @@
+<h1>All munros to explore:</h1>
+<% for munro in @munros %>
+<div>
+  <p>Name: <%= munro.name %></p>
+  <p>Region: <%= munro.region %></p>
+  <p>Altitude: <%= (munro.altitude).to_s %></p>
+
+  <p><a href= "/munros/<%= munro.id %>">About this munro</a></p>
+  <hr>
+</div>
+<% end %>

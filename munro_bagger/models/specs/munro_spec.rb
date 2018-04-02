@@ -1,5 +1,6 @@
 require('minitest/autorun')
 require_relative('../munro')
+require_relative('../hiker')
 
 
 class MunroTest < MiniTest::Test
@@ -10,6 +11,11 @@ class MunroTest < MiniTest::Test
 
   def test_all
     assert_equal(4, Munro.all().length)
+  end
+
+  def test_all_hikers
+    munro = Munro.find_by_id(3)
+    assert_equal(1, munro.all_hikers().length)
   end
 
   # def test_update

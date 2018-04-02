@@ -9,7 +9,7 @@ class Munro
       @id = options['id'].to_i if options['id']
       @name = options['name']
       @region = options['region']
-      @altitude = options['altitide'].to_i
+      @altitude = options['altitude'].to_i
   end
 
   def save()
@@ -61,6 +61,16 @@ class Munro
             WHERE id = $1;"
     values = [@id]
     SqlRunner.run(sql, values)
+   end
+
+   def all_hikers()
+     sql = "SELECT hikers.* FROM hikers
+            INNER JOIN hikes
+            ON hikers.id = hikes.hiker_id
+            WHERE hikes.munro_id = $1"
+     values = [@id]
+     results = SqlRunner.run(sql, values)
+     return results.map {|hiker| Hiker.new(hiker)}
    end
 
 

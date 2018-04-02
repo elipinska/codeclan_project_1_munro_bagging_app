@@ -1,8 +1,14 @@
 require('minitest/autorun')
 require_relative('../hiker')
+require_relative('../munro')
 
 
 class HikerTest < MiniTest::Test
+
+  def test_no_munro_goal_equals_nil
+    hiker = Hiker.find_by_id(2)
+    assert_nil(hiker.munro_goal)
+  end
 
   def test_find_by_id
     assert_equal(Hiker, Hiker.find_by_id(3).class)
@@ -11,6 +17,13 @@ class HikerTest < MiniTest::Test
   def test_all
     assert_equal(3, Hiker.all().length)
   end
+
+  def test_all_munros
+    hiker = Hiker.find_by_id(1)
+    assert_equal(2, hiker.all_munros().length)
+  end
+
+
 
   # def test_update
   #   hiker = Hiker.find_by_id(2)
@@ -23,6 +36,6 @@ class HikerTest < MiniTest::Test
   #   hiker = Hiker.find_by_id(2)
   #   hiker.delete()
   #   assert_equal(2, Hiker.all.length)
-  end
+  # end
 
 end

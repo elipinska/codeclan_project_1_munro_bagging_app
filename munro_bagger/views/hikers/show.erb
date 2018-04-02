@@ -1,0 +1,7 @@
+<h2>More about this hiker:</h2>
+
+<p>Name: <%= @hiker.first_name + " " + @hiker.last_name %></p>
+<p>Age: <%= @hiker.age %></p>
+<% if @hiker.munro_goal != nil %>
+    <p>Wants to bag <%= @hiker.munro_goal %> munros.</p>
+<%end%>
