@@ -4,7 +4,7 @@ DROP TABLE munros;
 
 CREATE TABLE hikers
   (id SERIAL4 PRIMARY KEY,
-  first_name VARCHAR(255),
+  first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255),
   age INT,
   munro_goal INT
@@ -12,14 +12,14 @@ CREATE TABLE hikers
 
 CREATE TABLE munros
   (id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255),
+  name VARCHAR(255) NOT NULL,
   region VARCHAR(255),
   altitude INT
 );
 
 CREATE TABLE hikes
   (id SERIAL4 PRIMARY KEY,
-  hiker_id INT4 REFERENCES hikers(id),
-  munro_id INT4 REFERENCES munros(id),
-  date DATE
+  hiker_id INT4 REFERENCES hikers(id) NOT NULL,
+  munro_id INT4 REFERENCES munros(id) NOT NULL,
+  date DATE NOT NULL
 );
