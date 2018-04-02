@@ -17,7 +17,7 @@ class Munro
     (
       name,
       region,
-      altitude,
+      altitude
     )
     VALUES
     (
@@ -52,7 +52,7 @@ class Munro
      sql = "UPDATE munros
             SET (name, region, altitude) = ($1, $2, $3)
             WHERE id = $4"
-     values = [@name, @region, @altitude]
+     values = [@name, @region, @altitude, @id]
      SqlRunner.run(sql, values)
    end
 

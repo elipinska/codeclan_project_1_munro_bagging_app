@@ -12,17 +12,17 @@ class HikerTest < MiniTest::Test
     assert_equal(3, Hiker.all().length)
   end
 
-  def test_update
-    hiker = Hiker.find_by_id(2)
-    hiker.last_name = "Guziuk"
-    hiker.update()
-    assert_equal("Guziuk", Hiker.find_by_id(2).last_name)
-  end
-
-  def test_delete
-    hiker = Hiker.find_by_id(2)
-    hiker.delete()
-    assert_equal(2, Hiker.all.length)
+  # def test_update
+  #   hiker = Hiker.find_by_id(2)
+  #   hiker.last_name = "Guziuk"
+  #   hiker.update()
+  #   assert_equal("Guziuk", Hiker.find_by_id(2).last_name)
+  # end
+  #
+  # def test_delete
+  #   hiker = Hiker.find_by_id(2)
+  #   hiker.delete()
+  #   assert_equal(2, Hiker.all.length)
   end
 
 end
