@@ -7,6 +7,16 @@ get '/munros' do
   erb (:"munros/index")
 end
 
+get '/munros/new' do
+  erb(:"munros/new")
+end
+
+post '/munros' do
+  munro = Munro.new(params)
+  munro.save
+  redirect to("/munros")
+end
+
 get '/munros/:id' do
   @munro = Munro.find_by_id(params['id'].to_i)
   erb( :"munros/show" )

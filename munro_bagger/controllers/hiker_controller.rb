@@ -7,6 +7,16 @@ get '/hikers' do
   erb (:"hikers/index")
 end
 
+get '/hikers/new' do
+  erb(:"hikers/new")
+end
+
+post '/hikers' do
+  hiker = Hiker.new(params)
+  hiker.save
+  redirect to("/hikers")
+end
+
 get '/hikers/:id' do
   @hiker = Hiker.find_by_id(params['id'].to_i)
   erb( :"hikers/show" )
