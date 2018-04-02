@@ -22,6 +22,19 @@ post '/hikes' do
   redirect to("/hikes")
 end
 
+get '/hikes/:id/edit' do
+  @hikers = Hiker.all()
+  @munros = Munro.all()
+  @hike = Hike.find_by_id(params['id'])
+  erb(:"hikes/edit")
+end
+
+post '/hikes/:id' do
+  hike = Hike.new(params)
+  hike.update
+  redirect to "/hikes"
+end
+
 post '/hikes/:id/delete' do
   hike = Hike.find_by_id(params[:id])
   hike.delete()

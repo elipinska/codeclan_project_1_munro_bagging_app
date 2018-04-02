@@ -6,16 +6,12 @@
   <label for="last-name">Last name:</label>
   <input id ="last-name" type="text" name="last_name" value="<%=@hiker.last_name%>"/>
 
-  <label for="house-select">House:</label>
-  <select id="house-select" name="house">
-    <option value="1" <%="selected" if @student.house == 1%>>Air</option>
-    <option value="2" <%="selected" if @student.house == 2%>>Water</option>
-    <option value="3" <%="selected" if @student.house == 3%>>Fire</option>
-    <option value="4" <%="selected" if @student.house == 4%>>Earth</option>
-  </select>
+  <label for="date-of-birth">Date of birth:</label>
+  <input id ="date-of-birth" type="date" name="date_of_birth" value="<%= Date.parse(@hiker.date_of_birth)%>"/>
 
-  <label for="age">Age:</label>
-  <input id ="age" type="number" name="age" value="<%=@student.age%>"/>
+
+  <label for="munro-goal">Current goal:</label>
+  <input id ="munro-goal" type="number" name="munro_goal" value="<%=@hiker.munro_goal%>"/>
 
   <input type="submit" value="Update"/>
 

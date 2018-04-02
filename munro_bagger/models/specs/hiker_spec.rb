@@ -23,6 +23,11 @@ class HikerTest < MiniTest::Test
     assert_equal(2, hiker.all_munros().length)
   end
 
+  def test_age
+    hiker = Hiker.find_by_id(1)
+    assert_equal(27, hiker.age)
+  end
+
 
 
   # def test_update

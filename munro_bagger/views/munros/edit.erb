@@ -1,0 +1,14 @@
+<h1>Edit munro entry</h1>
+<form method="post" action="/munros/<%=@munro.id%>">
+  <label for="name">Name:</label>
+  <input id ="name" type="text" name="name" value="<%=@munro.name%>"/>
+
+  <label for="region">Region:</label>
+  <input id ="region" type="text" name="region" value="<%=@munro.region%>"/>
+
+  <label for="altitude">Altitude (in meters):</label>
+  <input id ="altitude" type="number" name="altitude" value="<%=@munro.altitude%>"/>
+
+  <input type="submit" value="Update"/>
+
+</form>

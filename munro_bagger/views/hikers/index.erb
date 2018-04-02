@@ -4,7 +4,7 @@
 <div>
   <p>Name: <%= hiker.full_name() %></p>
   <p>Age: <%= hiker.age %></p>
-  <% if hiker.munro_goal != nil %>
+  <% if hiker.munro_goal != nil && hiker.munro_goal != 0 %>
       <p>Wants to bag <%= hiker.munro_goal %> munros.</p>
   <%end%>
   <p><a href= "/hikers/<%= hiker.id %>">Learn more about this hiker</a></p>

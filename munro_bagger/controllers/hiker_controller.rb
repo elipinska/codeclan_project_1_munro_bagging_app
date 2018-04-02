@@ -22,6 +22,17 @@ get '/hikers/:id' do
   erb( :"hikers/show" )
 end
 
+get '/hikers/:id/edit' do
+  @hiker = Hiker.find_by_id(params['id'])
+  erb(:"hikers/edit")
+end
+
+post '/hikers/:id' do
+  hiker = Hiker.new(params)
+  hiker.update
+  redirect to "/hikers/#{params['id']}"
+end
+
 post '/hikers/:id/delete' do
   hiker = Hiker.find_by_id(params[:id])
   hiker.delete()

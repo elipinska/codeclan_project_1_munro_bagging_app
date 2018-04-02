@@ -6,7 +6,7 @@ CREATE TABLE hikers
   (id SERIAL4 PRIMARY KEY,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255),
-  age INT,
+  date_of_birth DATE,
   munro_goal INT
 );
 

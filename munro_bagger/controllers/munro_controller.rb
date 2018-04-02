@@ -22,6 +22,17 @@ get '/munros/:id' do
   erb( :"munros/show" )
 end
 
+get '/munros/:id/edit' do
+  @munro = Munro.find_by_id(params['id'])
+  erb(:"munros/edit")
+end
+
+post '/munros/:id' do
+  munro = Munro.new(params)
+  munro.update
+  redirect to "/munros/#{params['id']}"
+end
+
 post '/munros/:id/delete' do
   munro = Munro.find_by_id(params[:id])
   munro.delete()
