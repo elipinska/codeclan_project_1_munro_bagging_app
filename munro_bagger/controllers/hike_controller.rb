@@ -16,10 +16,16 @@ get '/hikes/new' do
   erb(:"hikes/new")
 end
 
+
 post '/hikes' do
   hike = Hike.new(params)
   hike.save
-  redirect to("/hikes")
+  hiker = Hiker.find_by_id(hike.hiker_id)
+  if hiker.munro_goal == hiker.unique_hikes_no
+    redirect to("/hikers/#{hiker.id}/goal_completed")
+  else
+    redirect to("/hikes")
+  end
 end
 
 get '/hikes/:id/edit' do

@@ -9,7 +9,7 @@ class Hiker
       @id = options['id'].to_i if options['id']
       @first_name = options['first_name']
       @last_name = options['last_name']
-      @date_of_birth = options['date_of_birth'] if options['date_of_birth']
+      @date_of_birth = options['date_of_birth'] if (options['date_of_birth'] && options['date_of_birth'] != "")
       # @age = options['age'].to_i
       @munro_goal = options['munro_goal'].to_i if options['munro_goal']
   end

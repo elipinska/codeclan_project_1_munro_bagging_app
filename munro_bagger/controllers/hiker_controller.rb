@@ -11,6 +11,7 @@ get '/hikers/new' do
   erb(:"hikers/new")
 end
 
+
 post '/hikers' do
   hiker = Hiker.new(params)
   hiker.save
@@ -39,4 +40,9 @@ post '/hikers/:id/delete' do
   hiker = Hiker.find_by_id(params[:id])
   hiker.delete()
   redirect to("/hikers")
+end
+
+get '/hikers/:id/goal_completed' do
+  @hiker = Hiker.find_by_id(params['id'])
+  erb(:"hikers/goal_completed")
 end

@@ -1,13 +1,16 @@
 <h2>More about this hiker:</h2>
 
 <p>Name: <%= @hiker.first_name + " " + @hiker.last_name %></p>
-<p>Age: <%= @hiker.age if @hiker.date_of_birth%></p>
+
+<%if @hiker.date_of_birth%>
+<p>Age: <%= @hiker.age%></p>
+<%end%>
 
 <%unless @unique_hikes_no < 1 %>
   <p>Last seen on the slopes of <%=@hiker.latest_hike()[0]['name']%> on <%=@hiker.latest_hike[0]['date']%>.
 <%end%>
 
-<% if @hiker.munro_goal != nil && @hiker.munro_goal != 0%>
+<% if @hiker.munro_goal != nil && @hiker.munro_goal > @hiker.unique_hikes_no%>
     <p>Current goal: Wants to bag <%= @hiker.munro_goal %> munros (<%=@hiker.munro_goal - @unique_hikes_no %> to go).</p>
 <%end%>
 

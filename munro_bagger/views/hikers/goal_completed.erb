@@ -1,0 +1,9 @@
+<h1>Congratulations! You've completed your goal!</h2>
+<p>Congratulations, <%=@hiker.first_name%>! You've just completed your goal to climb
+<%if @hiker.munro_goal == 1 %>
+<%="#{@hiker.munro_goal} munro"%>
+<%else%>
+<%="#{@hiker.munro_goal} munros"%>
+<%end%>
+!</p>
+<p>You can create a new goal in your <a href="/hikers/<%=@hiker.id%>/edit">profile settings</a> or <a href="/hikes">go back to the list of all hikes</a>.</p>
