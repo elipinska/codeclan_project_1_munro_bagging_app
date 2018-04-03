@@ -15,13 +15,9 @@ class HikerTest < MiniTest::Test
   end
 
   def test_all
-    assert_equal(3, Hiker.all().length)
+    assert_equal(4, Hiker.all().length)
   end
 
-  def test_all_munros
-    hiker = Hiker.find_by_id(1)
-    assert_equal(5, hiker.all_munros().length)
-  end
 
   def test_age
     hiker = Hiker.find_by_id(1)
@@ -38,6 +34,13 @@ class HikerTest < MiniTest::Test
     assert_equal(PG::Result, hiker.latest_hike.class)
   end
 
+  def test_most_active_hiker_indiv_hikes
+    assert_equal(1, Hiker.most_active_hiker_indiv_hikes().id)
+  end
+
+  def test_most_active_hiker_unique_munros
+    assert_equal(1, Hiker.most_active_hiker_unique_munros())
+  end
 
 
   # def test_update

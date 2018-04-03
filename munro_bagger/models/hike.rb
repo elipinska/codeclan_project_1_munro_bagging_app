@@ -30,7 +30,8 @@ class Hike
   end
 
   def self.all()
-    sql = "SELECT * FROM hikes"
+    sql = "SELECT * FROM hikes
+           ORDER BY hikes.date DESC"
     results = SqlRunner.run( sql )
     return results.map { |hike| Hike.new(hike) }
   end

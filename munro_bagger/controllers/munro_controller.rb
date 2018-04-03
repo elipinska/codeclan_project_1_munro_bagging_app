@@ -19,6 +19,7 @@ end
 
 get '/munros/:id' do
   @munro = Munro.find_by_id(params['id'].to_i)
+  @successful_hikers = @munro.all_hikers()
   erb( :"munros/show" )
 end
 

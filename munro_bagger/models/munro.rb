@@ -64,7 +64,7 @@ class Munro
    end
 
    def all_hikers()
-     sql = "SELECT hikers.* FROM hikers
+     sql = "SELECT DISTINCT hikers.* FROM hikers
             INNER JOIN hikes
             ON hikers.id = hikes.hiker_id
             WHERE hikes.munro_id = $1"

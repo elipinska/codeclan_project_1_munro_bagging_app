@@ -28,11 +28,25 @@
     </tr>
     <% end %>
   </table>
-  
+
   <%unless @unique_hikes_no < 1%>
   <h2>Highest munro bagged:</h2>
   <div>
     <p><%=@hiker.highest_munro.name if @hiker%></p>
     <p><%=@hiker.highest_munro.altitude%>m</p>
     </div>
+  <%end%>
+
+  <%unless @unique_hikes_no < 1%>
+    <h2>All of <%=@hiker.first_name%>'s hikes:</h2>
+    <table>
+      <th>Name</th>
+      <th>Date</th>
+        <%for hike in @hiker.all_hikes%>
+        <tr>
+          <td><a href ="/munros/<%=Munro.find_by_id(hike.munro_id).id%>"><%=Munro.find_by_id(hike.munro_id).name%></a></td>
+          <td><%=hike.date%></p></td>
+        </tr>
+    <%end%>
+    </table>
   <%end%>

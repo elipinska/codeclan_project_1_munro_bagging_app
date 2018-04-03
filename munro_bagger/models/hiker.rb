@@ -80,18 +80,17 @@ class Hiker
      return unique_hikes.ntuples()
    end
 
-   def all_munros()
-    sql = "SELECT munros.* FROM munros
-           INNER JOIN hikes
-           ON munros.id = hikes.munro_id
-           WHERE hikes.hiker_id = $1"
+   def all_hikes()
+    sql = "SELECT hikes.* FROM hikes
+           WHERE hikes.hiker_id = $1
+           ORDER BY hikes.date DESC"
     values = [@id]
     results = SqlRunner.run(sql, values)
-    return results.map {|munro| Munro.new(munro)}
+    return results.map {|munro| Hike.new(munro)}
    end
 
    def latest_hike
-     sql = "SELECT munros.name, hikes.date FROM munros, hikes
+     sql = "SELECT munros.name, TO_CHAR(hikes.date, 'dd/mm/yyyy') AS date FROM munros, hikes
             WHERE hikes.munro_id = munros.id
             AND hikes.hiker_id = $1
             ORDER BY date DESC
@@ -138,6 +137,7 @@ class Hiker
       return age
 
    end
+
 
 
 end

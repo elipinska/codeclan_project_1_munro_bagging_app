@@ -7,3 +7,10 @@
   <input type='submit' value="Delete (this will delete the munro and all linked hikes!)">
 </form>
 <a href="/munros/<%= @munro.id%>/edit">Edit</a>
+<h3>Bagged by:</h3>
+
+<% for hiker in @successful_hikers %>
+  <p><%=hiker.full_name%></p>
+
+
+<% end %>
