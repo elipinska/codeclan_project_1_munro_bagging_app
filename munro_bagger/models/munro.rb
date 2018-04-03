@@ -30,7 +30,7 @@ class Munro
   end
 
   def self.all()
-    sql = "SELECT * FROM munros"
+    sql = "SELECT * FROM munros ORDER BY name"
     results = SqlRunner.run( sql )
     return results.map { |munro| Munro.new(munro) }
   end
@@ -73,9 +73,23 @@ class Munro
      return results.map {|hiker| Hiker.new(hiker)}
    end
 
+   def all_hikes()
+     sql = "SELECT DISTINCT hikes.* FROM hikes
+            WHERE hikes.munro_id = $1"
+     values = [@id]
+     results = SqlRunner.run(sql, values)
+     return results.map {|hike| Hike.new(hike)}
+   end
+
    def self.most_popular
      all_munros = Munro.all()
      munros_sorted = all_munros.sort {|munro1, munro2| munro1.all_hikers.length <=> munro2.all_hikers.length}
+     return munros_sorted.last
+   end
+
+   def self.most_indiv_visits
+     all_munros = Munro.all()
+     munros_sorted = all_munros.sort {|munro1, munro2| munro1.all_hikes.length <=> munro2.all_hikes.length}
      return munros_sorted.last
    end
 

@@ -3,8 +3,9 @@ require('sinatra/contrib/all')
 require_relative('../models/hiker.rb')
 
 get '/hikers' do
-  @hikers = Hiker.all()
+  @hikers = Hiker.all_sorted()
   @most_active = Hiker.most_active()
+  @most_indiv_hikes = Hiker.most_indiv_hikes
   erb (:"hikers/index")
 end
 

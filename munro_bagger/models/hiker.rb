@@ -10,7 +10,6 @@ class Hiker
       @first_name = options['first_name']
       @last_name = options['last_name']
       @date_of_birth = options['date_of_birth'] if (options['date_of_birth'] && options['date_of_birth'] != "")
-      # @age = options['age'].to_i
       @munro_goal = options['munro_goal'].to_i if options['munro_goal']
   end
 
@@ -138,12 +137,20 @@ class Hiker
 
    end
 
-   def self.most_active
+   def self.all_sorted
      all_hikers = Hiker.all()
-     hikers_sorted = all_hikers.sort {|hiker1, hiker2| hiker1.unique_hikes_no <=> hiker2.unique_hikes_no}
-     return hikers_sorted.last
+     hikers_sorted = all_hikers.sort {|hiker1, hiker2| hiker2.unique_hikes_no <=> hiker1.unique_hikes_no}
+     return hikers_sorted
    end
 
+   def self.most_active
+     return Hiker.all_sorted.first
+   end
 
+   def self.most_indiv_hikes
+     all_hikers = Hiker.all()
+     hikers_sorted = all_hikers.sort {|hiker1, hiker2| hiker2.all_hikes.length <=> hiker1.all_hikes.length}
+     return hikers_sorted.first
+   end
 
 end

@@ -5,6 +5,7 @@ require_relative('../models/munro.rb')
 get '/munros' do
   @munros = Munro.all()
   @most_popular = Munro.most_popular()
+  @most_indiv_visits = Munro.most_indiv_visits()
   erb (:"munros/index")
 end
 
