@@ -5,10 +5,10 @@ require_relative('../munro')
 
 class HikerTest < MiniTest::Test
 
-  def test_no_munro_goal_equals_nil
-    hiker = Hiker.find_by_id(2)
-    assert_nil(hiker.munro_goal)
-  end
+  # def test_no_munro_goal_equals_nil
+  #   hiker = Hiker.find_by_id(2)
+  #   assert_nil(hiker.munro_goal)
+  # end
 
   def test_find_by_id
     assert_equal(Hiker, Hiker.find_by_id(3).class)
@@ -20,12 +20,22 @@ class HikerTest < MiniTest::Test
 
   def test_all_munros
     hiker = Hiker.find_by_id(1)
-    assert_equal(2, hiker.all_munros().length)
+    assert_equal(5, hiker.all_munros().length)
   end
 
   def test_age
     hiker = Hiker.find_by_id(1)
     assert_equal(27, hiker.age)
+  end
+
+  def test_highest_munro
+    hiker = Hiker.find_by_id(1)
+    assert_equal(Munro, hiker.highest_munro().class)
+  end
+
+  def test_latest_hike
+    hiker = Hiker.find_by_id(1)
+    assert_equal(PG::Result, hiker.latest_hike.class)
   end
 
 

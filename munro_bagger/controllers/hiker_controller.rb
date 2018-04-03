@@ -19,7 +19,8 @@ end
 
 get '/hikers/:id' do
   @hiker = Hiker.find_by_id(params['id'].to_i)
-  @bagged_munros = @hiker.all_munros()
+  @unique_hikes = @hiker.unique_hikes
+  @unique_hikes_no = @hiker.unique_hikes_no
   erb( :"hikers/show" )
 end
 

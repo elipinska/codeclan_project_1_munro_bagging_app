@@ -1,15 +1,38 @@
 <h2>More about this hiker:</h2>
 
 <p>Name: <%= @hiker.first_name + " " + @hiker.last_name %></p>
-<p>Age: <%= @hiker.age %></p>
-<% if @hiker.munro_goal != nil && @hiker.munro_goal != 0%>
-    <p>Wants to bag <%= @hiker.munro_goal %> munros.</p>
+<p>Age: <%= @hiker.age if @hiker.date_of_birth%></p>
+
+<%unless @unique_hikes_no < 1 %>
+  <p>Last seen on the slopes of <%=@hiker.latest_hike()[0]['name']%> on <%=@hiker.latest_hike[0]['date']%>.
 <%end%>
+
+<% if @hiker.munro_goal != nil && @hiker.munro_goal != 0%>
+    <p>Current goal: Wants to bag <%= @hiker.munro_goal %> munros (<%=@hiker.munro_goal - @unique_hikes_no %> to go).</p>
+<%end%>
+
 <form action="/hikers/<%= @hiker.id %>/delete" method="post">
   <input type='submit' value="Delete (this will delete the user and all their hikes!)">
 </form>
+
 <a href="/hikers/<%= @hiker.id%>/edit">Edit</a>
-<h2>Munros climbed:</h1>
-  <% for munro in @bagged_munros %>
-  <p> <%=munro.name%> </p>
-  <% end %>
+
+<h2>Munros climbed (<%=@unique_hikes_no%> in total):</h1>
+  <table>
+    <th>Name</th>
+    <th>Last climbed</th>
+    <% for hike in @unique_hikes %>
+    <tr>
+      <td><a href="/munros/<%=hike['munro_id']%>"><%=hike['name']%></a></td>
+      <td> <%=hike['date']%> </td>
+    </tr>
+    <% end %>
+  </table>
+  
+  <%unless @unique_hikes_no < 1%>
+  <h2>Highest munro bagged:</h2>
+  <div>
+    <p><%=@hiker.highest_munro.name if @hiker%></p>
+    <p><%=@hiker.highest_munro.altitude%>m</p>
+    </div>
+  <%end%>

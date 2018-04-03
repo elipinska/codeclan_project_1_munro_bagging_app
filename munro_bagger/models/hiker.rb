@@ -66,18 +66,50 @@ class Hiker
     SqlRunner.run(sql, values)
    end
 
-   def all_munros()
-     sql = "SELECT munros.* FROM munros
-            INNER JOIN hikes
-            ON munros.id = hikes.munro_id
-            WHERE hikes.hiker_id = $1"
-     values = [@id]
-     results = SqlRunner.run(sql, values)
-     return results.map {|munro| Munro.new(munro)}
+   def unique_hikes
+     sql = "SELECT DISTINCT ON (munros.name)
+            munros.id AS munro_id, munros.name, hikes.date FROM munros, hikes
+            WHERE hikes.munro_id = munros.id
+            AND hikes.hiker_id = $1
+            ORDER BY munros.name, hikes.date DESC"
+    values = [@id]
+    return SqlRunner.run(sql, values)
    end
 
-   def all_munros_no
-     all_munros().length()
+   def unique_hikes_no
+     return unique_hikes.ntuples()
+   end
+
+   def all_munros()
+    sql = "SELECT munros.* FROM munros
+           INNER JOIN hikes
+           ON munros.id = hikes.munro_id
+           WHERE hikes.hiker_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|munro| Munro.new(munro)}
+   end
+
+   def latest_hike
+     sql = "SELECT munros.name, hikes.date FROM munros, hikes
+            WHERE hikes.munro_id = munros.id
+            AND hikes.hiker_id = $1
+            ORDER BY date DESC
+            LIMIT 1"
+      values = [@id]
+     return SqlRunner.run(sql, values)
+   end
+
+   def highest_munro
+     sql = "SELECT munros.*
+            FROM munros INNER JOIN hikes
+            ON munros.id = hikes.munro_id
+            WHERE hikes.hiker_id = $1
+            ORDER BY munros.altitude DESC
+            LIMIT 1"
+     values = [@id]
+     result = SqlRunner.run(sql, values)
+     return Munro.new(result[0])
    end
 
    def full_name()

@@ -4,10 +4,10 @@
 <div>
   <p>Name: <%= hiker.full_name() %></p>
 
-  <p><%if hiker.all_munros_no == 1 %>
-     <%= "#{hiker.all_munros_no} munro"%>
+  <p><%if hiker.unique_hikes_no == 1 %>
+     <%= "#{hiker.unique_hikes_no} munro"%>
      <% else %>
-    <%= "#{hiker.all_munros_no} munros"%>
+    <%= "#{hiker.unique_hikes_no} munros"%>
     <% end %> bagged to date.</p>
   <p><a href= "/hikers/<%= hiker.id %>">Learn more about this hiker</a></p>
   <hr>
