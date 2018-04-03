@@ -73,6 +73,11 @@ class Munro
      return results.map {|hiker| Hiker.new(hiker)}
    end
 
+   def self.most_popular
+     all_munros = Munro.all()
+     munros_sorted = all_munros.sort {|munro1, munro2| munro1.all_hikers.length <=> munro2.all_hikers.length}
+     return munros_sorted.last
+   end
 
 
 
