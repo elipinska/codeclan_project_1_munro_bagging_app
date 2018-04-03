@@ -10,3 +10,6 @@
 </form>
 <a href="/hikers/<%= @hiker.id%>/edit">Edit</a>
 <h2>Munros climbed:</h1>
+  <% for munro in @bagged_munros %>
+  <p> <%=munro.name%> </p>
+  <% end %>

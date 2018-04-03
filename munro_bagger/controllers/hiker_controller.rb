@@ -19,6 +19,7 @@ end
 
 get '/hikers/:id' do
   @hiker = Hiker.find_by_id(params['id'].to_i)
+  @bagged_munros = @hiker.all_munros()
   erb( :"hikers/show" )
 end
 

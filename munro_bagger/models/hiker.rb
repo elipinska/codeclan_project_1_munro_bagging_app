@@ -76,6 +76,10 @@ class Hiker
      return results.map {|munro| Munro.new(munro)}
    end
 
+   def all_munros_no
+     all_munros().length()
+   end
+
    def full_name()
      return "#{@first_name} #{@last_name}"
    end

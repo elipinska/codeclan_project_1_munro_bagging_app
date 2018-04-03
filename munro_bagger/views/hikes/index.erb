@@ -7,7 +7,7 @@
   <p>Hiker: <%= hike.hiker().full_name %></p>
   <p>Munro: <%= hike.munro().name %> </p>
   <form action="/hikes/<%= hike.id %>/delete" method="post">
-    <input type='submit' value="Delete!">
+    <input type='submit' value="Delete">
   <a href="/hikes/<%= hike.id%>/edit">Edit</a>
   </form>
   <hr>

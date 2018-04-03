@@ -3,10 +3,12 @@
 <% for hiker in @hikers %>
 <div>
   <p>Name: <%= hiker.full_name() %></p>
-  <p>Age: <%= hiker.age %></p>
-  <% if hiker.munro_goal != nil && hiker.munro_goal != 0 %>
-      <p>Wants to bag <%= hiker.munro_goal %> munros.</p>
-  <%end%>
+
+  <p><%if hiker.all_munros_no == 1 %>
+     <%= "#{hiker.all_munros_no} munro"%>
+     <% else %>
+    <%= "#{hiker.all_munros_no} munros"%>
+    <% end %> bagged to date.</p>
   <p><a href= "/hikers/<%= hiker.id %>">Learn more about this hiker</a></p>
   <hr>
 </div>
