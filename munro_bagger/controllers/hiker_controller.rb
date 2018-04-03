@@ -4,6 +4,7 @@ require_relative('../models/hiker.rb')
 
 get '/hikers' do
   @hikers = Hiker.all()
+  @most_active = Hiker.most_active()
   erb (:"hikers/index")
 end
 

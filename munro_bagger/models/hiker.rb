@@ -138,6 +138,12 @@ class Hiker
 
    end
 
+   def self.most_active
+     all_hikers = Hiker.all()
+     hikers_sorted = all_hikers.sort {|hiker1, hiker2| hiker1.unique_hikes_no <=> hiker2.unique_hikes_no}
+     return hikers_sorted.last
+   end
+
 
 
 end
