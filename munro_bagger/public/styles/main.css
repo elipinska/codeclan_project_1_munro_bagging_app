@@ -1,3 +1,7 @@
+/* body {
+  background-image: url("/images/background.png");
+} */
+
 nav {
   background-color: rgb(24, 142, 96);
   font-family: 'Lato', sans-serif;
@@ -16,7 +20,7 @@ nav {
 }
 
 .main-logo {
-  width: 350px;
+  max-width: 500px;
 }
 
 .home {
@@ -178,4 +182,12 @@ button.dropbtn a {
   justify-content: space-around;
   align-items: center;
   flex-shrink: 0;
+}
+
+#name {
+  min-width: 250px;
+}
+
+#cookie {
+  max-width: 300px;
 }
