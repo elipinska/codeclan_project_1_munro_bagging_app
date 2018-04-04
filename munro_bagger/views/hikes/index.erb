@@ -1,13 +1,15 @@
-<h1>All awesome hikes:</h1>
-<% for hike in @hikes %>
-<div>
-  <p>Date: <%= hike.date %>
-  <p>Hiker: <%= hike.hiker().full_name %></p>
-  <p>Munro: <%= hike.munro().name %> </p>
-  <form action="/hikes/<%= hike.id %>/delete" method="post">
-    <input type='submit' value="Delete">
-  <a href="/hikes/<%= hike.id%>/edit">Edit</a>
-  </form>
-  <hr>
+<div class="index">
+  <h1>All awesome hikes:</h1>
+  <% for hike in @hikes %>
+  <div>
+    <p>Date: <%= hike.date %>
+    <p>Hiker: <%= hike.hiker().full_name %></p>
+    <p>Munro: <%= hike.munro().name %> </p>
+    <form action="/hikes/<%= hike.id %>/delete" method="post">
+      <input type='submit' value="Delete">
+    <button class="editbtn"><a href="/hikes/<%= hike.id%>/edit">Edit</a></button>
+    </form>
+    <hr>
+  </div>
+  <% end %>
 </div>
-<% end %>

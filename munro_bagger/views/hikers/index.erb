@@ -1,17 +1,19 @@
-<h1>Most active hikers</h1>
-<p>Most bagged munros: <%=@most_active.full_name%> with a record <%=@most_active.unique_hikes_no%> bagged munros!</p>
-<p>Most individual hikes: <%=@most_indiv_hikes.full_name%> with an impressive <%=@most_indiv_hikes.all_hikes.length%> hikes!</p>
-<h1>All intrepid hikers:</h1>
-<% for hiker in @hikers %>
-<div>
-  <p>Name: <%= hiker.full_name() %></p>
+<div class="index">
+  <h1>Most active hikers</h1>
+  <p>Most bagged munros: <%=@most_active.full_name%> with a record <%=@most_active.unique_hikes_no%> bagged munros!</p>
+  <p>Most individual hikes: <%=@most_indiv_hikes.full_name%> with an impressive <%=@most_indiv_hikes.all_hikes.length%> hikes!</p>
+  <h1>All intrepid hikers:</h1>
+  <% for hiker in @hikers %>
+  <div>
+    <p>Name: <%= hiker.full_name() %></p>
 
-  <p><%if hiker.unique_hikes_no == 1 %>
-     <%= "#{hiker.unique_hikes_no} munro"%>
-     <% else %>
-    <%= "#{hiker.unique_hikes_no} munros"%>
-    <% end %> bagged to date.</p>
-  <p><a href= "/hikers/<%= hiker.id %>">Learn more about this hiker</a></p>
-  <hr>
+    <p><%if hiker.unique_hikes_no == 1 %>
+       <%= "#{hiker.unique_hikes_no} munro"%>
+       <% else %>
+      <%= "#{hiker.unique_hikes_no} munros"%>
+      <% end %> bagged to date.</p>
+    <p><a href= "/hikers/<%= hiker.id %>">Learn more about this hiker</a></p>
+    <hr>
+  </div>
+  <% end %>
 </div>
-<% end %>

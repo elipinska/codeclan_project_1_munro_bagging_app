@@ -1,14 +1,16 @@
-<h1>Most popular munros</h1>
-<p>Most bagged munro: <%=@most_popular.name%>, bagged by <%=@most_popular.all_hikers.length%> hikers.</p>
-<p>Most individual visits: <%=@most_indiv_visits.name%>, visited <%=@most_indiv_visits.all_hikes.length%> times by <%=@most_indiv_visits.all_hikers.length%> hikers.</p>
-<h1>All munros to explore:</h1>
-<% for munro in @munros %>
-<div>
-  <p>Name: <%= munro.name %></p>
-  <p>Region: <%= munro.region %></p>
-  <p>Altitude: <%= (munro.altitude).to_s %>m</p>
+<div class="index">
+  <h1>Most popular munros</h1>
+  <p>Most bagged munro: <%=@most_popular.name%>, bagged by <%=@most_popular.all_hikers.length%> hikers.</p>
+  <p>Most individual visits: <%=@most_indiv_visits.name%>, visited <%=@most_indiv_visits.all_hikes.length%> times by <%=@most_indiv_visits.all_hikers.length%> hikers.</p>
+  <h1>All munros to explore:</h1>
+  <% for munro in @munros %>
+  <div>
+    <p>Name: <%= munro.name %></p>
+    <p>Region: <%= munro.region %></p>
+    <p>Altitude: <%= (munro.altitude).to_s %>m</p>
 
-  <p><a href= "/munros/<%= munro.id %>">About this munro</a></p>
-  <hr>
+    <p><a href= "/munros/<%= munro.id %>">About this munro</a></p>
+    <hr>
+  </div>
+  <% end %>
 </div>
-<% end %>
