@@ -27,7 +27,7 @@
             </label>
           </div>
           <div class="form-question">
-            <p class="error"><%=@error%></p>
+            <p class="error"><%=@error if @error%></p>
             <label for="date">Date:</label>
             <input id ="date" type="date" name="date"/>
           </div>

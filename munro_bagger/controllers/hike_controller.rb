@@ -40,6 +40,14 @@ get '/hikes/new/error' do
   erb(:"hikes/new")
 end
 
+get '/hikes/:id/edit/error' do
+  @error = "Please complete the date field."
+  @hikers = Hiker.all()
+  @munros = Munro.all
+  @hike = Hike.find_by_id(params['id'])
+  erb(:"hikes/edit")
+end
+
 get '/hikes/:id/edit' do
   @hikers = Hiker.all()
   @munros = Munro.all()
@@ -48,9 +56,13 @@ get '/hikes/:id/edit' do
 end
 
 post '/hikes/:id' do
-  hike = Hike.new(params)
-  hike.update
-  redirect to "/hikes"
+  if params['date'] == ""
+    redirect to("/hikes/#{params['id']}/edit/error")
+  else
+    hike = Hike.new(params)
+    hike.update
+    redirect to "/hikes"
+  end
 end
 
 post '/hikes/:id/delete' do

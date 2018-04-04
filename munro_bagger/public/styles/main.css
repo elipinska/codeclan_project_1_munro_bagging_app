@@ -235,6 +235,10 @@ button.dropbtn a {
   background-color: rgb(237, 222, 125);
 }
 
+.display-box-highlight-content:hover {
+  background-color: rgb(229, 211, 96);
+}
+
 .error {
   color: rgb(225, 71, 74);
   font-size: 0.9rem;

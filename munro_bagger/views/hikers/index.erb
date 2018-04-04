@@ -4,8 +4,8 @@
     <div class="display-box-highlight">
       <h2>Most bagged munros</h2>
       <div class="display-box-highlight-content">
-        <img src="images/trophy.png" alt="">
-        <h3><%=@most_active.full_name%></h3>
+        <img src="images/trophy.png" alt="most active hiker icon">
+        <h3><a href="hikers/<%=@most_active.id %>"><%=@most_active.full_name%></a></h3>
         <p>with a record <%=@most_active.unique_hikes_no%> bagged munros!</p>
       </div>
     </div>
@@ -14,7 +14,7 @@
       <h2>Most individual hikes</h2>
       <div class="display-box-highlight-content">
         <img src="images/trophy.png" alt="">
-        <h3><%=@most_indiv_hikes.full_name%></h3>
+        <h3><a href="hikers/<%=@most_indiv_hikes.id %>"><%=@most_indiv_hikes.full_name%></a></h3>
         <p> with an impressive <%=@most_indiv_hikes.all_hikes.length%> hikes!</p>
       </div>
     </div>
@@ -23,7 +23,7 @@
   <div class="row">
     <% for hiker in @hikers %>
     <div class="display-box">
-      <img src="images/hiker.png" alt="">
+      <img src="images/hiker.png" alt="hiker icon">
       <p><a href="hikers/<%= hiker.id %>"><%= hiker.full_name() %></a></p>
 
       <p><%if hiker.unique_hikes_no == 1 %>
