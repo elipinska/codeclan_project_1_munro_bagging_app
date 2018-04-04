@@ -2,6 +2,10 @@
   background-image: url("/images/background.png");
 } */
 
+body a {
+  color: rgb(0, 0, 0);
+}
+
 nav {
   background-color: rgb(24, 142, 96);
   font-family: 'Lato', sans-serif;
@@ -42,7 +46,6 @@ nav {
 }
 
 .dropdown-content a {
-    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -74,7 +77,6 @@ button.dropbtn a {
 
 .editbtn a {
   text-decoration: none;
-  color: rgb(0,0,0);
   cursor: default;
 }
 
@@ -113,7 +115,6 @@ button.dropbtn a {
 }
 
 .display-table a {
-  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
@@ -209,26 +210,28 @@ button.dropbtn a {
   margin: auto;
 }
 
-.display-box, .display-box-highlight {
+.display-box, .display-box-highlight-content {
     flex-basis: 20%;
+    min-width: 240px;
     padding: 10px;
-    margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.display-box a, .display-box-highlight a {
-  color: rgb(0, 0, 0);
+.display-box a, .display-box-highlight-content a {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .display-box {
   background-color: rgb(209, 231, 207);
+  margin: 10px;
 }
 
 .display-box:hover {
   background-color: rgb(183, 219, 179);
 }
 
-.display-box-highlight {
+.display-box-highlight-content {
   background-color: rgb(237, 222, 125);
 }
 
@@ -236,4 +239,17 @@ button.dropbtn a {
   color: rgb(225, 71, 74);
   font-size: 0.9rem;
   font-weight: bold;
+}
+
+.display-box-highlight h2 {
+  padding: 15px;
+  margin: 0px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(119, 109, 40);
+  display: flex;
+  flex-direction: column;
+}
+
+.display-box-highlight {
+  margin: 10px;
 }
