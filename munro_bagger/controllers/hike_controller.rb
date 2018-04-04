@@ -18,14 +18,26 @@ end
 
 
 post '/hikes' do
-  hike = Hike.new(params)
-  hike.save
-  hiker = Hiker.find_by_id(hike.hiker_id)
-  if hiker.munro_goal == hiker.unique_hikes_no
-    redirect to("/hikers/#{hiker.id}/goal_completed")
+  if params['date'] == ""
+    redirect to("/hikes/new/error")
   else
-    redirect to("/hikes")
+    hike = Hike.new(params)
+    hike.save
+    hiker = Hiker.find_by_id(hike.hiker_id)
+    if hiker.munro_goal == hiker.unique_hikes_no
+      redirect to("/hikers/#{hiker.id}/goal_completed")
+    else
+      redirect to("/hikes")
+    end
   end
+end
+
+
+get '/hikes/new/error' do
+  @error = "Please complete the date field."
+  @hikers = Hiker.all()
+  @munros = Munro.all
+  erb(:"hikes/new")
 end
 
 get '/hikes/:id/edit' do

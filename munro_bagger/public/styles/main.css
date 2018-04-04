@@ -105,7 +105,7 @@ button.dropbtn a {
 }
 
 .display-table td:hover, tr:hover {
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(183, 219, 179);
 }
 
 .display-table td:nth-last-of-type(2), .display-table td:last-of-type {
@@ -190,4 +190,50 @@ button.dropbtn a {
 
 #cookie {
   max-width: 300px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.row-centered {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-container {
+  width: 80%;
+  margin: auto;
+}
+
+.display-box, .display-box-highlight {
+    flex-basis: 20%;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.display-box a, .display-box-highlight a {
+  color: rgb(0, 0, 0);
+}
+
+.display-box {
+  background-color: rgb(209, 231, 207);
+}
+
+.display-box:hover {
+  background-color: rgb(183, 219, 179);
+}
+
+.display-box-highlight {
+  background-color: rgb(237, 222, 125);
+}
+
+.error {
+  color: rgb(225, 71, 74);
+  font-size: 0.9rem;
+  font-weight: bold;
 }
