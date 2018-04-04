@@ -81,6 +81,7 @@ button.dropbtn a {
 
 .display-table {
   margin-left: 100px;
+  font-size: 1.2rem;
 }
 
 .display-table th {
@@ -120,10 +121,11 @@ button.dropbtn a {
 
 .new-form {
   background-color: rgb(209, 231, 207);
-  width: 40%;
+  width: 60%;
   margin-top: 30px;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-width: 300px;
 }
 
 .new-form h1 {
@@ -168,4 +170,12 @@ button.dropbtn a {
 
 .submit-btn:hover {
   background-color: rgb(17, 109, 58);
+}
+
+.question-field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-shrink: 0;
 }
