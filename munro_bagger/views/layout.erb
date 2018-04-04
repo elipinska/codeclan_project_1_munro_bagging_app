@@ -3,12 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>Munro Bagger</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
   <body>
-    <p><a href="/">Home</a>
-    <p><a href="/hikers">Hikers</a>
-    <p><a href="/munros">Munros</a>
-    <p><a href="/hikes">Hikes</a>
+    <nav class="navbar">
+      <!-- <img class= "logo" src="/images/hiker.png" alt=""> -->
+      <a class="home" href="/">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Hikers</button>
+        <div class="dropdown-content">
+          <a href="/hikers">All hikers</a>
+          <a href="/hikers/new">New hiker</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Munros</button>
+        <div class="dropdown-content">
+          <a href="/munros">All munros</a>
+          <a href="/munros/new">New munro</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Hikes</button>
+        <div class="dropdown-content">
+          <a href="/hikes">All hikes</a>
+          <a href="/hikes/new">New hike</a>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
+
   </body>
 </html>
