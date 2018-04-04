@@ -7,7 +7,7 @@
   <input id ="last-name" type="text" name="last_name" value="<%=@hiker.last_name%>"/>
 
   <label for="date-of-birth">Date of birth:</label>
-  <input id ="date-of-birth" type="date" name="date_of_birth" value="<%= Date.parse(@hiker.date_of_birth)%>"/>
+  <input id ="date-of-birth" type="date" name="date_of_birth" value="<%= Date.parse(@hiker.date_of_birth) if @hiker.date_of_birth%>"/>
 
 
   <label for="munro-goal">Current goal:</label>
