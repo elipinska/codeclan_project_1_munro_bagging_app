@@ -57,10 +57,11 @@ nav {
     background-color: rgb(17, 109, 58);
 }
 
-.index {
+.page {
   font-family: 'Lato', sans-serif;
   text-align: center;
 }
+
 
 button.dropbtn a {
   text-decoration: none;
@@ -72,11 +73,6 @@ button.dropbtn a {
   color: rgb(0,0,0);
   cursor: default;
 }
-
-/* .display-container {
-  display: flex;
-  flex-direction: column;
-} */
 
 .centered-display {
   display: flex;
@@ -114,4 +110,62 @@ button.dropbtn a {
 .display-table a {
   color: rgb(0, 0, 0);
   text-decoration: none;
+}
+
+.centered-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-form {
+  background-color: rgb(209, 231, 207);
+  width: 40%;
+  margin-top: 30px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.new-form h1 {
+  padding: 15px;
+  margin: 0px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(24, 142, 96);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.form-content {
+  text-align: left;
+  font-size: 1.3rem;
+  padding: 15px;
+}
+
+.form-content input:last-of-type {
+  text-align: center;
+}
+
+.form-question {
+  margin: 10px 0px;
+}
+
+.new-form input, select {
+  font-size: 1.3rem;
+}
+
+.submit-btn {
+  margin: 10px 4px;
+  padding: 10px;
+  font-size: 1.3rem;
+  background-color: rgb(24, 142, 96);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: rgb(17, 109, 58);
 }
