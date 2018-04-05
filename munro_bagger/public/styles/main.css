@@ -1,6 +1,8 @@
-/* body {
+body {
   background-image: url("/images/background.png");
-} */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 body a {
   color: rgb(0, 0, 0);
@@ -108,7 +110,7 @@ button.dropbtn a {
 }
 
 .display-table tr {
-  background-color: rgb(209, 231, 207);
+  background-color: rgb(214, 239, 210);
 }
 
 .display-table td:hover, tr:hover {
@@ -116,7 +118,7 @@ button.dropbtn a {
 }
 
 .display-table td:nth-last-of-type(2), .display-table td:last-of-type {
-  background-color: rgb(255,255,255);
+  background-color: rgb(243, 255, 242);
 }
 
 .display-table a {
@@ -130,7 +132,7 @@ button.dropbtn a {
 }
 
 .new-form, .munro-display {
-  background-color: rgb(209, 231, 207);
+  background-color: rgb(243, 255, 242);
   width: 60%;
   margin-top: 30px;
   text-align: center;
@@ -251,8 +253,16 @@ button.dropbtn a {
 .main-container {
   width: 80%;
   margin: auto;
-  /* background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  background-color: rgb(243, 255, 242);
+  border: thin solid gray;
+  border-top: none;
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+.main-container h1 {
+  padding: 20px 0px;
+  margin: 0;
 }
 
 .display-box, .display-box-highlight-content {
@@ -304,7 +314,7 @@ button.dropbtn a {
 }
 
 .hiker-display {
-  background-color: rgb(233, 247, 232);
+  background-color: rgb(243, 255, 242);
   width: 80%;
   margin-top: 30px;
   text-align: center;
@@ -347,4 +357,9 @@ button.dropbtn a {
   font-size: 1.2rem;
   padding: 20px 0px;
   margin-bottom: 20px;
+}
+
+.row {
+  margin-left: 5px;
+  margin-right: 5px;
 }
