@@ -145,6 +145,14 @@ button.dropbtn a {
   padding: 10px;
 }
 
+.hiker-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}
+
+
 .munro-column {
   display: flex;
   padding: 10px;
@@ -168,7 +176,7 @@ button.dropbtn a {
   align-self: center;
 }
 
-.new-form h1, .munro-display h1 {
+.new-form h1, .munro-display h1, .hiker-display h1 {
   padding: 15px;
   margin: 0px;
   color: rgb(255, 255, 255);
@@ -293,4 +301,41 @@ button.dropbtn a {
 
 .display-box-highlight {
   margin: 10px;
+}
+
+.hiker-display {
+  background-color: rgb(233, 247, 232);
+  width: 80%;
+  margin-top: 30px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-width: 300px;
+}
+
+.munro-column h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.munro-column table th {
+  text-align: center;
+  background-color: rgb(17, 109, 58);
+  color: rgb(255, 255, 255);
+}
+
+.munro-column table, .munro-column th, .munro-column td {
+  border: 2px solid rgb(17, 109, 58);
+}
+
+.munro-column table {
+    border-collapse: collapse;
+}
+
+.munro-column img {
+  margin: 15px 0px;
+  align-self: center;
+}
+
+.highest-munro {
+  text-align: center;
 }
