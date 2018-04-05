@@ -70,6 +70,7 @@ nav {
 }
 
 
+
 button.dropbtn a {
   text-decoration: none;
   color: white;
@@ -79,6 +80,10 @@ button.dropbtn a {
   text-decoration: none;
   cursor: default;
 }
+
+/* .editbtn {
+  width: 128px;
+} */
 
 .centered-display {
   display: flex;
@@ -124,7 +129,7 @@ button.dropbtn a {
   align-items: center;
 }
 
-.new-form {
+.new-form, .munro-display {
   background-color: rgb(209, 231, 207);
   width: 60%;
   margin-top: 30px;
@@ -133,7 +138,33 @@ button.dropbtn a {
   min-width: 300px;
 }
 
-.new-form h1 {
+.munro-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.munro-column {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  text-align: left;
+}
+
+.munro-column button {
+  width: 100%;
+}
+
+.munro-column p, .munro-column h3 {
+  margin: 5px;
+}
+
+.munro-column ul {
+  padding-left: 20px;
+}
+
+.new-form h1, .munro-display h1 {
   padding: 15px;
   margin: 0px;
   color: rgb(255, 255, 255);
@@ -208,6 +239,8 @@ button.dropbtn a {
 .main-container {
   width: 80%;
   margin: auto;
+  /* background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .display-box, .display-box-highlight-content {
