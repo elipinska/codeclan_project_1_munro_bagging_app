@@ -34,7 +34,7 @@
     cursor: pointer;
 }
 
-button.dropbtn a {
+button.dropbtn a, button.navbtn a {
   text-decoration: none;
   color: white;
 }
