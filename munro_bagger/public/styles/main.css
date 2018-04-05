@@ -336,6 +336,14 @@ button.dropbtn a {
   align-self: center;
 }
 
-.highest-munro {
+.distinctions {
   text-align: center;
+}
+
+.person {
+  border-bottom: 2px ridge rgb(17, 109, 58);
+  border-top: 2px ridge rgb(17, 109, 58);
+  font-size: 1.2rem;
+  padding: 20px 0px;
+  margin-bottom: 20px;
 }
