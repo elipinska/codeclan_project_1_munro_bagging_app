@@ -164,6 +164,10 @@ button.dropbtn a {
   padding-left: 20px;
 }
 
+.munro-column img {
+  align-self: center;
+}
+
 .new-form h1, .munro-display h1 {
   padding: 15px;
   margin: 0px;

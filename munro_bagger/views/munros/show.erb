@@ -3,7 +3,15 @@
     <h1>More about this munro:</h1>
     <div class="munro-content">
       <div class="munro-column">
+        <% if @munro.id == Munro.most_popular.id%>
+        <img src="/images/trophy-m.png" alt="munro icon">
+        <p>Bagged by most hikers</p>
+        <%elsif @munro.id == Munro.most_indiv_visits.id%>
+        <img src="/images/trophy-m.png" alt="munro icon">
+        <p>Most visited munro</p>
+        <%else%>
         <img src="/images/munro.png" alt="munro icon">
+        <%end%>
         <button class="editbtn"><a href="/munros/<%= @munro.id%>/edit">Edit</a></button>
 
         <form action="/munros/<%= @munro.id %>/delete" method="post"></button>
