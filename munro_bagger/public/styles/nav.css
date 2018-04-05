@@ -3,18 +3,6 @@ nav {
   font-family: 'Lato', sans-serif;
 }
 
-
-.dropbtn, .home, .navbtn {
-    background-color: rgb(24, 142, 96);
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-}
-
 .home {
   margin-left: 30px;
 }
@@ -46,8 +34,4 @@ nav {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: rgb(17, 109, 58);
 }

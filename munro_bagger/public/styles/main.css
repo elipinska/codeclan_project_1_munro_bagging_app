@@ -19,61 +19,13 @@ body a {
 }
 
 
-
-button.dropbtn a {
-  text-decoration: none;
-  color: white;
-}
-
-.editbtn a {
-  text-decoration: none;
-  cursor: default;
-}
-
-
-.centered-display {
-  display: flex;
-  justify-content: center;
-}
-
-.display-table {
-  margin-left: 100px;
-  font-size: 1.2rem;
-}
-
-.display-table th {
-  color: rgb(255,255,255);
-}
-
-.display-table th, td {
-  padding: 15px;
-}
-
-.display-table tr:first-of-type {
-  background-color: rgb(24, 142, 96);
-}
-
-.display-table tr {
-  background-color: rgb(214, 239, 210);
-}
-
-.display-table td:hover, tr:hover {
-  background-color: rgb(183, 219, 179);
-}
-
-.display-table td:nth-last-of-type(2), .display-table td:last-of-type {
-  background-color: rgb(243, 255, 242);
-}
-
-.display-table a {
-  text-decoration: none;
-}
-
 .centered-display {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
+
 
 .new-form, .munro-display {
   background-color: rgb(243, 255, 242);
@@ -99,26 +51,23 @@ button.dropbtn a {
 }
 
 
-.munro-column {
+.profile-column {
   display: flex;
   padding: 10px;
   flex-direction: column;
   text-align: left;
 }
 
-.munro-column button {
-  width: 100%;
-}
 
-.munro-column p, .munro-column h3 {
+.profile-column p, .profile-column h3 {
   margin: 5px;
 }
 
-.munro-column ul {
+.profile-column ul {
   padding-left: 20px;
 }
 
-.munro-column img {
+.profile-column img {
   align-self: center;
 }
 
@@ -148,22 +97,6 @@ button.dropbtn a {
 
 .new-form input, select {
   font-size: 1.3rem;
-}
-
-.submit-btn {
-  margin: 10px 4px;
-  padding: 10px;
-  font-size: 1.3rem;
-  background-color: rgb(24, 142, 96);
-  border: none;
-  border-radius: 10px;
-  color: white;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background-color: rgb(17, 109, 58);
 }
 
 .question-field {
@@ -266,26 +199,12 @@ button.dropbtn a {
   min-width: 300px;
 }
 
-.munro-column h2 {
+.profile-column h2 {
   text-align: center;
   margin-top: 20px;
 }
 
-.munro-column table th {
-  text-align: center;
-  background-color: rgb(17, 109, 58);
-  color: rgb(255, 255, 255);
-}
-
-.munro-column table, .munro-column th, .munro-column td {
-  border: 2px solid rgb(17, 109, 58);
-}
-
-.munro-column table {
-    border-collapse: collapse;
-}
-
-.munro-column img {
+.profile-column img {
   margin: 15px 0px;
   align-self: center;
 }

@@ -3,7 +3,7 @@
     <h1>More about this hiker:</h1>
     <div class="hiker-content">
 
-      <div class="munro-column">
+      <div class="profile-column">
         <img src="/images/hiker.png" alt="hiker icon">
 
         <button class="editbtn"><a href="/hikers/<%= @hiker.id%>/edit">Edit</a></button>
@@ -15,7 +15,7 @@
 
       </div>
 
-      <div class="munro-column">
+      <div class="profile-column">
         <div class="person">
           <h3>Name: <%= @hiker.first_name + " " + @hiker.last_name %></h3>
 
@@ -62,7 +62,7 @@
           </table>
           <%end%>
         </div>
-        <div class="munro-column">
+        <div class="profile-column">
           <div class="distinctions">
             <h2>Highest munro bagged:</h2>
             <%unless @unique_hikes_no < 1%>
@@ -80,8 +80,6 @@
             <h2>Distinction</h2>
             <img src="/images/trophy.png" alt="trophy icon">
             <p>Most individual hikes</p>
-            <%else%>
-            <img src="/images/hiker.png" alt="hiker icon">
             <%end%>
           </div>
         </div>

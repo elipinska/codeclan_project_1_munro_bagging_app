@@ -2,7 +2,7 @@
   <div class="munro-display">
     <h1>More about this munro:</h1>
     <div class="munro-content">
-      <div class="munro-column">
+      <div class="profile-column">
         <div class="distinctions">
         <% if @munro.id == Munro.most_popular.id%>
           <h3>Distinction</h3>
@@ -24,7 +24,7 @@
         </form>
       </div>
 
-      <div class="munro-column">
+      <div class="profile-column">
         <h3>Name: <%= @munro.name %></h3>
         <h3>Region: <%= @munro.region %></h3>
         <h3>Altitude: <%= @munro.altitude %>m</h3>
@@ -32,7 +32,7 @@
 
       </div>
 
-      <div class="munro-column">
+      <div class="profile-column">
         <h3>Bagged by:</h3>
 
         <ul>
