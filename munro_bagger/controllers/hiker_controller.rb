@@ -13,11 +13,10 @@ get '/hikers/new' do
   erb(:"hikers/new")
 end
 
-
 post '/hikers' do
-  hiker = Hiker.new(params)
-  hiker.save
-  redirect to("/hikers")
+    hiker = Hiker.new(params)
+    hiker.save
+    redirect to("/hikers")
 end
 
 get '/hikers/:id' do
