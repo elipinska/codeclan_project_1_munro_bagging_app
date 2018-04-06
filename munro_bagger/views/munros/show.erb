@@ -17,10 +17,10 @@
           <img class="profile-img" src="/images/munro.png" alt="munro icon">
         <%end%>
       </div>
-        <button class="editbtn"><a href="/munros/<%= @munro.id%>/edit">Edit</a></button>
+        <button class="editbtn submit-btn"><a href="/munros/<%= @munro.id%>/edit">Edit</a></button>
 
         <form action="/munros/<%= @munro.id %>/delete" method="post">
-          <button type='submit'>Delete</button>
+          <button class="submit-btn" type='submit'>Delete</button>
         </form>
       </div>
 
