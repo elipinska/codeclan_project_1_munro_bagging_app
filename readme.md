@@ -7,9 +7,9 @@
 
 <ul>
   <li>Display a list of hikers</li>
-  <li>Show individual hikers and see a list of all munros they've climbed</li>
-  <li>Display a list of munros</li>
-  <li>Show individual munros and see how many hikers have climbed it</li>
+  <li>Show individual hikers and see a list of all Munros they've climbed</li>
+  <li>Display a list of Munros</li>
+  <li>Show individual Munros and see how many hikers have climbed it</li>
   <li>View all hikes (ordered by the latest)</li>
   <li>Create new hikes</li>
   <li>Create new hikers</li>
@@ -17,7 +17,7 @@
 
 ### Possible Extensions:
 
-- Display the highest munro climbed for each hiker
-- Add a difficulty level to each munro; display the most difficult munro for each hiker
+- Display the highest Munro climbed for each hiker
+- Add a difficulty level to each Munro; display the most difficult Munro for each hiker
 - View hikes by region
-- Allow hikers to have personal goals (e.g. climb 10 munros)
+- Allow hikers to have personal goals (e.g. climb 10 Munros)
